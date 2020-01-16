@@ -1,0 +1,64 @@
+#content_page_wrapper input{
+    border-bottom-width: 1px !important;
+}
+
+#appts{
+    margin-top: 10px;
+    height: 50px;
+    border: none;
+    overflow: hidden;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+select[multiple]:focus option:checked {
+    background: #c12031 linear-gradient(0deg, #c12031 0%, #c12031 100%);
+}
+
+#appts option:hover {
+    background-color: lightgrey;
+}
+
+#appts option:visited{
+
+    border-radius: 3px;
+    color: rgb(137, 137, 137);
+    background-color: white !important;
+}
+
+#appts:focus {
+    outline: none;
+}
+
+#appts option{
+    width: 80px;
+    height: auto;
+    font-size: 1rem;
+    padding: 10px 0;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border: rgb(137, 137, 137) solid 1px;
+    background-color: white;
+    overflow: hidden;
+    -moz-overflow:hidden;
+}
+
+input[type="text"]::before {
+    color: #999999;
+    content: attr(placeholder) !important;
+}
+input[type="text"] {
+    color: #ffffff;
+}
+input[type="text"]:focus,
+input[type="text"]:valid {
+    color: #666666;
+}
+input[type="text"]:focus::before,
+input[type="text"]:valid::before {
+    content: "" !important;
+}
+

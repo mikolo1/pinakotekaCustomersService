@@ -1,0 +1,2 @@
+Order managament system with customer service and calendar managament. Users have functionalities of placing or editing orders, while customers receiving SMS/e-mail notifications, checking order realization progress and scheduling appointments.
+Technologies used: Java, Spring Framework, JPA/Hibernate, MySQL, Thymeleaf and more.

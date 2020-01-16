@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add new order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/assets/css/style.css" th:href="@{/static/assets/css/add.css}" type="text/css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="container my-5" style="margin-top: 1rem !important; margin-bottom: 1rem !important;">
+    <h3>Add new order</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form method="post" th:action="@{addorder}" th:object="${order}">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="orderNo" class="sr-only">Order No.</label>
+                            <input type="text" th:field="*{orderNo}" name="orderNo" class="form-control"
+                                   id="orderNo" placeholder="enter order number">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="dateOfOrder" class="col-form-label">Date of order</label>
+                            <input type="date" th:field="*{dateOfOrder}" class="form-control" id="dateOfOrder"
+                                   placeholder="dateOfOrder">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="estimatedDate" class="col-form-label">Estimated date</label>
+                            <input type="date" th:field="*{estimatedDate}" class="form-control" id="estimatedDate"
+                                   placeholder="estimatedDate">
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="status" class="col-form-label">Status</label>
+                            <select id="status" name="status" placeholder="status">
+                                <option value="INPROGRESS" selected>INPROGRESS</option>
+                                <option value="READY">READY</option>
+                                <option value="RECEIVED">RECEIVED</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="nickname" class="col-form-label">Nickname</label>
+                            <select id="nickname" name="nickname" placeholder="nick">
+                                <option th:each="nickname : ${T(pl.pinakoteka.customersservice.entity.Nickname).values()}"
+                                        th:value="${nickname}"
+                                        th:text="${nickname}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="phoneNumber" class="sr-only">Phone number</label>
+                            <input type="text" th:field="*{phoneNumber}" class="form-control" id="phoneNumber"
+                                   placeholder="Phone number 9-digits">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="value" class="sr-only">Value</label>
+                            <input type="text" th:field="*{value}" class="form-control" id="value"
+                                   placeholder="Enter value">
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="comments" class="sr-only">Comments</label>
+                            <input type="text" th:field="*{comments}" class="form-control" id="comments"
+                                   placeholder="Comments to the order">
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn-lg btn-primary" value="Add Order">
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
